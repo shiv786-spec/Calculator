@@ -10,12 +10,13 @@
 </head>
 
 <body class="h-screen flex flex-col gap-3 justify-center items-center ">
+        <h1 class="text-center text-6xl mb-10 text-black font-bold from-neutral-700">CALCULATOR</h1>
 
-        <input type="text" class="w-[30%] rounded-2xl bg-slate-300 h-20 text-5xl border-2"
+        <input type="text" class="w-[30%] rounded-2xl bg-slate-300 h-20 text-5xl border-2 md:h-[10%] sm:w-[50%] lg::h-[10%] lg:w-[30%]"
                 readonly>
 
-        <div class="h-[70%] w-[30%] border-2 p-5 grid rounded-2xl grid-cols-4 gap-10 text-5xl">
-                <button class="border-2 bg-orange-500 rounded-full text-5xl" onclick="deleteNumber()"><i
+        <div class=" calculate h-[70%] w-[30%] border-2 p-5 grid rounded-2xl grid-cols-4 gap-10 text-3xl md:h-[60%] sm:w-[50%] lg:h-[60%] lg:w-[30%] sm:text-3xl">
+                <button class="border-2 bg-orange-500 rounded-full" onclick="deleteNumber()"><i
                                 class="ri-delete-back-2-line"></i></button>
                 <button class="border-2  hover:bg-black  hover:text-white rounded-full"
                         onclick="clearDisplay()">AC</button>
