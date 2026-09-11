@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+        <title>Document</title>
+</head>
+
+<body class="h-screen flex flex-col gap-3 justify-center items-center ">
+
+        <input type="text" class="w-[30%] rounded-2xl bg-slate-300 h-20 text-5xl border-2"
+                readonly>
+
+        <div class="h-[70%] w-[30%] border-2 p-5 grid rounded-2xl grid-cols-4 gap-10 text-5xl">
+                <button class="border-2 bg-orange-500 rounded-full text-5xl" onclick="deleteNumber()"><i
+                                class="ri-delete-back-2-line"></i></button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="clearDisplay()">AC</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                       onclick="addOperator('%')">%</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('/')"><i
+                                class="ri-divide-line"></i></button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('7')">7</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('8')">8</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('9')">9</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('*')"><i
+                                class="ri-close-line"></i></button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('4')">4</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('5')">5</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('6')">6</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('-')"><i
+                                class="ri-subtract-line"></i></button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('1')">1</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('2')">2</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
+                        onclick="addValue('3')">3</button>
+                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('+')"><i
+                                class="ri-add-line"></i></button>
+
+                <button class="border-2 rounded-full bg-orange-500" onclick="addValue('0')">0</button>
+                <button class="border-2 rounded-full " onclick="addOperator('.')">.</button>
+                <button class="border-2 rounded-full" onclick="calculate()">=</button>
+                <button class="border-2 rounded-full hover:bg-orange-500" onclick="addOperator('+/-')">+/-</button>
+
+
+        </div>
+</body>
+<script>
+      let inp = document.querySelector("input");
+        function addValue(value) {
+               inp.value +=value;
+        }
+        function addOperator(value) {
+                inp.value +=value;
+        }
+function calculate() {
+        let a = eval(inp.value);
+        inp.value = a
+}
+
+function clearDisplay() {
+        inp.value = "";
+}
+
+function deleteNumber() {
+        inp.value = inp.value.slice(0,-1)
+        updateinp();
+}
+</script>
+
+</html>
