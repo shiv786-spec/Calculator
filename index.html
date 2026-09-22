@@ -1,83 +1,239 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
-        <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+    rel="stylesheet" />
+
+<title>Responsive Calculator</title>
+```
+
 </head>
 
-<body class="h-screen flex flex-col gap-3 justify-center items-center ">
-        <h1 class="text-center text-6xl mb-10 text-black font-bold from-neutral-700">CALCULATOR</h1>
+<body class="min-h-screen bg-slate-100 flex flex-col justify-center items-center px-4 py-6">
 
-        <input type="text" class="w-[30%] rounded-2xl bg-slate-300 h-20 text-5xl border-2 md:h-[10%] sm:w-[50%] lg::h-[10%] lg:w-[30%]"
-                readonly>
+```
+<!-- Heading -->
+<h1 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+           mb-5 sm:mb-8 md:mb-10 font-bold text-black">
+    CALCULATOR
+</h1>
 
-        <div class=" calculate h-[70%] w-[30%] border-2 p-5 grid rounded-2xl grid-cols-4 gap-10 text-3xl md:h-[60%] sm:w-[50%] lg:h-[60%] lg:w-[30%] sm:text-3xl">
-                <button class="border-2 bg-orange-500 rounded-full" onclick="deleteNumber()"><i
-                                class="ri-delete-back-2-line"></i></button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="clearDisplay()">AC</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                       onclick="addOperator('%')">%</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('/')"><i
-                                class="ri-divide-line"></i></button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('7')">7</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('8')">8</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('9')">9</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('*')"><i
-                                class="ri-close-line"></i></button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('4')">4</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('5')">5</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('6')">6</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('-')"><i
-                                class="ri-subtract-line"></i></button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('1')">1</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('2')">2</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full"
-                        onclick="addValue('3')">3</button>
-                <button class="border-2  hover:bg-black  hover:text-white rounded-full" onclick="addOperator('+')"><i
-                                class="ri-add-line"></i></button>
+<!-- Calculator Container -->
+<div class="w-full max-w-[400px]">
 
-                <button class="border-2 rounded-full bg-orange-500" onclick="addValue('0')">0</button>
-                <button class="border-2 rounded-full " onclick="addOperator('.')">.</button>
-                <button class="border-2 rounded-full" onclick="calculate()">=</button>
-                <button class="border-2 rounded-full hover:bg-orange-500" onclick="addOperator('+/-')">+/-</button>
+    <!-- Display -->
+    <input
+        type="text"
+        class="w-full h-16 sm:h-20 md:h-20
+               rounded-2xl bg-slate-300
+               px-4 text-right
+               text-3xl sm:text-4xl md:text-5xl
+               border-2 border-slate-400
+               outline-none mb-4"
+        readonly
+    >
 
+    <!-- Buttons -->
+    <div class="calculate
+                w-full
+                min-h-[480px] sm:min-h-[520px]
+                border-2 border-slate-400
+                p-3 sm:p-5
+                grid grid-cols-4
+                gap-3 sm:gap-4 md:gap-5
+                rounded-2xl
+                bg-white
+                text-xl sm:text-2xl md:text-3xl">
 
-        </div>
-</body>
+        <!-- Row 1 -->
+        <button
+            class="border-2 bg-orange-500 hover:bg-orange-600
+                   text-white rounded-full transition"
+            onclick="deleteNumber()">
+            <i class="ri-delete-back-2-line"></i>
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="clearDisplay()">
+            AC
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addOperator('%')">
+            %
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addOperator('/')">
+            <i class="ri-divide-line"></i>
+        </button>
+
+        <!-- Row 2 -->
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('7')">
+            7
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('8')">
+            8
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('9')">
+            9
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addOperator('*')">
+            <i class="ri-close-line"></i>
+        </button>
+
+        <!-- Row 3 -->
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('4')">
+            4
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('5')">
+            5
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('6')">
+            6
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addOperator('-')">
+            <i class="ri-subtract-line"></i>
+        </button>
+
+        <!-- Row 4 -->
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('1')">
+            1
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('2')">
+            2
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addValue('3')">
+            3
+        </button>
+
+        <button
+            class="border-2 hover:bg-black hover:text-white
+                   rounded-full transition"
+            onclick="addOperator('+')">
+            <i class="ri-add-line"></i>
+        </button>
+
+        <!-- Row 5 -->
+        <button
+            class="border-2 rounded-full
+                   bg-orange-500 hover:bg-orange-600
+                   text-white transition"
+            onclick="addValue('0')">
+            0
+        </button>
+
+        <button
+            class="border-2 rounded-full
+                   hover:bg-black hover:text-white transition"
+            onclick="addOperator('.')">
+            .
+        </button>
+
+        <button
+            class="border-2 rounded-full
+                   hover:bg-green-500 hover:text-white transition"
+            onclick="calculate()">
+            =
+        </button>
+
+        <button
+            class="border-2 rounded-full
+                   hover:bg-orange-500 hover:text-white transition"
+            onclick="addOperator('+/-')">
+            +/-
+        </button>
+
+    </div>
+</div>
+
 <script>
-      let inp = document.querySelector("input");
-        function addValue(value) {
-               inp.value +=value;
-        }
-        function addOperator(value) {
-                inp.value +=value;
-        }
-function calculate() {
-        let a = eval(inp.value);
-        inp.value = a
-}
 
-function clearDisplay() {
+    let inp = document.querySelector("input");
+
+    function addValue(value) {
+        inp.value += value;
+    }
+
+    function addOperator(value) {
+        inp.value += value;
+    }
+
+    function calculate() {
+        try {
+            let result = eval(inp.value);
+            inp.value = result;
+        } catch (error) {
+            inp.value = "Error";
+        }
+    }
+
+    function clearDisplay() {
         inp.value = "";
-}
+    }
 
-function deleteNumber() {
-        inp.value = inp.value.slice(0,-1)
-        updateinp();
-}
+    function deleteNumber() {
+        inp.value = inp.value.slice(0, -1);
+    }
+
 </script>
+```
+
+</body>
 
 </html>
